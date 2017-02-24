@@ -92,7 +92,9 @@ function activitypropagate_civicrm_post( $op, $objectName, $objectId, &$objectRe
     }
   }
   catch(CiviCRM_API3_Exception $e) {
-    CRM_Core_Session::setMessage('Child Activities not created ' . $e->getMessage());
+    CRM_Core_Session::
+    
+    ssage('Child Activities not created ' . $e->getMessage());
   }
 }
 
@@ -118,7 +120,7 @@ function activitypropagate_civicrm_custom( $op, $groupID, $entityID, &$params ) 
     _activitypropagate_create_child_activities($activity);
   }
   catch(CiviCRM_API3_Exception $e) {
-    CRM_Core_Session::setMessage('Child Activities not created ' . $e->getMessage());
+    CRM_Core_Session::setStatus('Child Activities not created ' . $e->getMessage());
   }
 }
 
